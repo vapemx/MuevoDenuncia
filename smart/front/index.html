@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firmar Contrato</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <h1>Firmar Contrato</h1>
+
+  <div id="metamaskStatus"></div>
+
+  <button id="connectButton" onclick="connectMetamask()">Conectar con Metamask</button>
+
+  <div id="contractForm" style="display: none;">
+    <h2>Enviar Contrato</h2>
+    <label for="mensajeInput">Mensaje de la denuncia:</label>
+    <input type="text" id="mensajeInput"><br>
+    <label for="fechaInput">Fecha de la denuncia:</label>
+    <input type="text" id="fechaInput"><br>
+    <button onclick="enviarContrato()">Enviar Contrato</button>
+  </div>
+</body>
+</html>

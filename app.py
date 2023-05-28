@@ -196,7 +196,13 @@ def upload():
 # Denuncia page
 @app.route('/complaint')
 def complaint():
-    return render_template('denuncia.html')
+    return render_template('complaint.html')
+
+
+# Mis denuncias
+@app.route('/my_complaints')
+def my_complaints():
+    return render_template('tabla.php')
 
 
 # Make complaint
@@ -236,7 +242,7 @@ def make_complaint():
         else:
             return 'Error al realizar denuncia'
     else:
-        return 'Usuario no registrado'#, render_template('index.html')
+        return index()
 
 
 if __name__ == '__main__':
