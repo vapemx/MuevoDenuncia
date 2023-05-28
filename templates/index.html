@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="static/style.css">
+<title>Pagina web basica</title>
+
+</head>
+<body>
+
+<div class="head">
+
+    <div class="logo">
+        <a href="#">Logo</a>
+    </div>
+
+    <nav class="navbar">
+        <a href="#">Plataformas</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Conacto</a>
+        <a href="#">Productos</a>
+        <a href="#">Precio</a>
+    </nav>
+
+</div>
+<!----------------------------------------------------------------------------------->
+
+
+
+
+
+<!----------------------------------------------------------------------------------->
+<header class="content header">
+    <main>
+        <section class="Contenedor sobre servicios">
+
+        </section>
+    </main>
+        <main>
+
+            <div class="contenedor__todo">
+
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes Adress?</h3>
+                        <button id="btn__registrarse"><img class="logo_meta" src="../HackAton/Imagenes/metamask_logo.png"></button>
+                    </div>
+                </div>
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form action="/create" class="formulario__login" method="POST" enctype="multipart/form-data">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" name="address">
+                        <input type="file" name="image">
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <!--Register-->
+                    <form action="" class="formulario__register">
+                        <h2>Regístrarse</h2>
+                        <input type="text" placeholder="Nombre completo">
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="text" placeholder="Usuario">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Regístrarse</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+</header>
+
+
+
+<div class="btn-home">
+        <a href="#" class="btn">Saber mas</a>
+    </div>
+
+    
+<section id="Plataformas"class="content sau">
+
+    <h2 class="title">Plataformas</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+        elit. Veritatis excepturi dolore, harum asperiores 
+        cupiditate officiis quia odit reiciendis quidem iure 
+        architecto laudantium 
+        nihil saepe pariatur vel labore molestias consectetur veniam?</p>
+    
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fab fa-windows"></i>
+            <h3>WINDOWS</h3>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+        <div class="box">
+            <i class="fab fa-apple"></i>
+            <h3>IOS</h3>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+        <div class="box">
+            <i class="fab fa-android"></i>
+            <h3>ANDROID</h3>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="content about">
+
+    <h2 class="title">Nosotros</h2>
+    <p>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Ut soluta similique 
+        quia reprehenderit eligendi aliquam. Sit 
+        odio impedit quibusdam. Velit corporis, 
+        optio debitis quidem ex ipsam rerum dolorem autem sequi.
+    </p>
+
+    <a href="#" class="btn">Saber mas</a>
+
+</section>
+<section class="geographic_range">
+    <h2 class="title">Rango Geografico</h2>
+    <figure class="map">
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1839066.3888144505!2d-101.59334426740719!3d25.80599745389968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662a377e498af83%3A0xde5ad0f0777ed7c!2sZona%20metropolitana%20de%20Monterrey%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1685217253781!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </figure>
+</section>
+
+
+</body>
+</html>
