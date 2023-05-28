@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet" href="static/style.css">
 <title>Pagina web basica</title>
-
+<script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
 </head>
 <body>
 
@@ -20,6 +20,7 @@
     </div>
 
     <nav class="navbar">
+        <a href="/complaint">Denuncia</a>
         <a href="#">Plataformas</a>
         <a href="#">Nosotros</a>
         <a href="#">Conacto</a>
@@ -42,7 +43,19 @@
         </section>
     </main>
         <main>
-
+            <script>
+                // Código JavaScript para interactuar con Metamask usando web3.js
+                window.addEventListener('load', function () {
+                  // Comprueba si Metamask está disponible
+                  if (typeof web3 !== 'undefined') {
+                    // Crea una instancia de web3 utilizando el proveedor de Metamask
+                    web3 = new Web3(web3.currentProvider);
+                    console.log('Metamask está disponible');
+                  } else {
+                    console.log('Metamask no está disponible');
+                  }
+                });
+              </script>
             <div class="contenedor__todo">
 
                 <div class="caja__trasera">

@@ -1,3 +1,4 @@
+from datetime import datetime as dt
 from flask import render_template
 from flask import Flask, request
 from hashlib import sha256
@@ -80,7 +81,7 @@ def add_complaint_db(address, vehicle_reported, datetime, municipio, street, ref
         cursor = conn.cursor()
 
         # Ejecutar el procedimiento almacenado para verificar el usuario
-        cursor.execute("insert into complaints (signer, vehicle_reported, incident_date, municipio, street, reference, complaint, resolved, complain_hash) values (?, ?, ?, ?, ?, ?, ?, ?, ?)", (address, vehicle_reported, datetime, municipio, street, reference, complaint, 0, hash,))
+        cursor.execute("insert into complaints (signers, vehicle_reported, incident_date, municipio, street, reference, complaint, resolved, complaint_hash) values (?, ?, ?, ?, ?, ?, ?, ?, ?)", (address, vehicle_reported, datetime, municipio, street, reference, complaint, 0, hash,))
         conn.commit()
         return True
 
@@ -195,7 +196,7 @@ def upload():
 # Denuncia page
 @app.route('/complaint')
 def complaint():
-    return render_template('complaint.html')
+    return render_template('denuncia.html')
 
 
 # Make complaint
@@ -204,8 +205,27 @@ def make_complaint():
     # Leer: address, vehicle_reported, datetime, municipio, street, reference, complaint 
     address = request.form.get('address')
     vehicle_reported = request.form.get('vehicle_reported')
-    datetime = request.form.get('datetime')
-    municipio = request.form.get('municipio')
+    selected_date = request.form.get('date')
+    selected_time = request.form.get('time')
+    selected_datetime_str = f"{selected_date} {selected_time}"
+    selected_datetime_obj = dt.strptime(selected_datetime_str, "%Y-%m-%d %H:%M")
+    datetime = str(selected_datetime_obj)
+    municipios = {
+    'municipio1': 'Apodaca',
+    'municipio2': 'Escobedo',
+    'municipio3': 'Garcia',
+    'municipio4': 'Juárez',
+    'municipio5': 'Monterrey',
+    'municipio6': 'San Nicolas',
+    'municipio7': 'San Pedro',
+    'municipio8': 'Santa Catarina'
+    }   
+    selected_option = request.form.get('list')
+
+    if selected_option:
+        if selected_option in municipios:
+            municipio = municipios[selected_option]
+        
     street = request.form.get('street')
     reference = request.form.get('reference')
     complaint = request.form.get('complaint')
@@ -216,7 +236,7 @@ def make_complaint():
         else:
             return 'Error al realizar denuncia'
     else:
-        return 'Usuario no registrado', render_template('index.html')
+        return 'Usuario no registrado'#, render_template('index.html')
 
 
 if __name__ == '__main__':
